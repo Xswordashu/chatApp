@@ -1,7 +1,8 @@
 import mongoose, { Mongoose } from "mongoose";
 import { boolean } from "zod";
-import UserModel from "./userModel";
-import { timeStamp } from "console";
+const { Schema } = mongoose;
+
+
 const concersationSchema = mongoose.Schema({
     name: {
         type:String,
@@ -18,7 +19,7 @@ const concersationSchema = mongoose.Schema({
             ref: 'UserModel'
         }
     ],
-    latsetMessage:{
+    latestMessage:{
         type:Schema.Types.ObjectId,
         ref:"MsgModel"
     },
